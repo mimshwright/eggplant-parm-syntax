@@ -12,7 +12,7 @@ class foo {
     var f = [a, b, c, d, e];
     var g = 0xFF00ff;
     var h = "#ffffff"
-  },
+  }
 
   abc: function () {
     return this;
