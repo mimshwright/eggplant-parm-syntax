@@ -35,7 +35,7 @@ atom-text-editor, :host {
   .gutter .line-number.folded,
   .gutter .line-number:after,
   .fold-marker:after {
-    color: @light-gray;
+    color: @syntax-gutter-text-color-selected;
   }
 
   .invisible {
@@ -48,6 +48,8 @@ atom-text-editor, :host {
 
   .selection .region {
     background-color: @syntax-selection-color;
+    border: 1px solid @syntax-selection-border-color;
+    border-radius: 2px;
   }
 }
 
@@ -63,14 +65,15 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .comment {
-  color: @light-gray;
+  color: @syntax-comment-text-color;
+  background: @syntax-comment-background-color;
 }
 
 .keyword {
-  color: @purple;
+  color: @syntax-keyword-color;
 
   &.control {
-    color: @purple;
+    color: @syntax-keyword-color;
   }
 
   &.operator {
@@ -78,47 +81,50 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.other.special-method {
-    color: @blue;
+    color: @color-sky;
   }
 
   &.other.unit {
-    color: @orange;
+    color: @color-tangerine;
   }
 }
 
 .storage {
-  color: @purple;
+  color: @syntax-storage-color;
 }
 
 .constant {
-  color: @orange;
+  color: @syntax-constant-color;
 
   &.character.escape {
-    color: @color-wintergreen;
+    color: @syntax-constant-string-escape-character-color;
   }
 
   &.numeric {
-    color: @orange;
+    color: @syntax-constant-numeric-color;
   }
 
+  &.other.rgb-value {
+    color: @syntax-constant-rgb-color
+  }
   &.other.color {
-    color: @color-wintergreen;
+    color: @syntax-constant-color;
   }
 
   &.other.symbol {
-    color: @color-wasabi;
+    color: @syntax-constant-symbol-color;
   }
 }
 
 .variable {
-  color: @color-sugo;
+  color: @syntax-var-color;
 
   &.interpolation {
-    color: darken(@color-sugo, 10%);
+    color: darken(@syntax-var-color, 10%);
   }
 
   &.parameter.function {
-    color: @syntax-text-color;
+    color: #FF00FF;
   }
 }
 
@@ -128,29 +134,33 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .string {
-  color: @color-wasabi;
-
+  color: @syntax-constant-string-color;
+  background: @syntax-constant-string-background-color;
+  font-style: italic;
 
   &.regexp {
-    color: @color-wintergreen;
+    color: @syntax-constant-numeric-color;
 
     .source.ruby.embedded {
-      color: @orange;
+      color: @syntax-constant-string-color;
     }
   }
 
   &.other.link {
-    color: @color-sugo;
+    color: @syntax-constant-string-color;
   }
 }
 
 .punctuation {
   &.definition {
     &.comment {
-      color: @light-gray;
+      // color: @light-gray;
     }
 
-    &.string,
+    &.string {
+      color: lighten(@syntax-constant-string-color, 10%);
+    }
+
     &.variable,
     &.parameters,
     &.array {
@@ -159,7 +169,7 @@ atom-text-editor .search-results .marker.current-result .region,
 
     &.heading,
     &.identity {
-      color: @blue;
+      color: @color-sky;
     }
 
     &.bold {
@@ -168,7 +178,7 @@ atom-text-editor .search-results .marker.current-result .region,
     }
 
     &.italic {
-      color: @purple;
+      color: @color-plum;
       font-style: italic;
     }
   }
@@ -181,21 +191,21 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .support {
   &.class {
-    color: @color-tangerine;
+    color: @syntax-function-support-color;
   }
 
   &.function  {
-    color: @color-wintergreen;
+    color: @syntax-function-support-color;
 
     &.any-method {
-      color: @blue;
+      // color: ;
     }
   }
 }
 
 .entity {
   &.name.function {
-    color: @blue;
+    color: @syntax-function-color;
   }
   &.name.type {
     color: @color-tangerine;
@@ -205,12 +215,13 @@ atom-text-editor .search-results .marker.current-result .region,
   &.other.inherited-class {
     color: @color-wasabi;
   }
-  &.name.class, &.name.type.class {
-    color: @color-tangerine;
+  &.name.class,
+  &.name.type.class {
+    color: @syntax-class-color;
   }
 
   &.name.section {
-    color: @blue;
+    color: @color-sky;
   }
 
   &.name.tag {
@@ -219,10 +230,10 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.other.attribute-name {
-    color: @orange;
+    color: @color-tangerine;
 
     &.id {
-      color: @blue;
+      color: @color-sky;
     }
   }
 }
@@ -233,15 +244,15 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.link {
-    color: @orange;
+    color: @color-tangerine;
   }
 
   &.require {
-    color: @blue;
+    color: @color-sky;
   }
 
   &.selector {
-    color: @purple;
+    color: @color-plum;
   }
 
   &.separator {
@@ -256,12 +267,12 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .markup {
   &.bold {
-    color: @orange;
+    color: @color-tangerine;
     font-weight: bold;
   }
 
   &.changed {
-    color: @purple;
+    color: @color-plum;
   }
 
   &.deleted {
@@ -269,12 +280,12 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.italic {
-    color: @purple;
+    color: @color-plum;
     font-style: italic;
   }
 
   &.heading .punctuation.definition.heading {
-    color: @blue;
+    color: @color-sky;
   }
 
   &.inserted {
@@ -286,7 +297,7 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.quote {
-    color: @orange;
+    color: @color-tangerine;
   }
 
   &.raw.inline {
