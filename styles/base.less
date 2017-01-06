@@ -81,7 +81,7 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.other.special-method {
-    color: @color-sky;
+    color: @color-wintergreen;
   }
 
   &.other.unit {
@@ -91,6 +91,10 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .storage {
   color: @syntax-storage-color;
+
+  &.type {
+    color: @syntax-keyword-color;
+  }
 }
 
 .constant {
@@ -124,7 +128,7 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.parameter.function {
-    color: #FF00FF;
+    color: @syntax-parameter-color;
   }
 }
 
@@ -151,6 +155,26 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 }
 
+.link {
+  color: @syntax-link-color;
+
+  .entity {
+    color: @syntax-var-color;
+  }
+
+  .punctuation {
+    color: darken(@syntax-link-color, 10%);
+  }
+  .link {
+    &.underline {
+      color: @syntax-link-url-color;
+
+      .punctuation {
+      }
+    }
+  }
+}
+
 .punctuation {
   &.definition {
     &.comment {
@@ -169,24 +193,34 @@ atom-text-editor .search-results .marker.current-result .region,
 
     &.heading,
     &.identity {
-      color: @color-sky;
+      color: @syntax-header-color;
     }
 
     &.bold {
-      color: @color-tangerine;
+      color: @syntax-bold-color;
       font-weight: bold;
     }
 
     &.italic {
-      color: @color-plum;
+      color: @syntax-italic-color;
       font-style: italic;
     }
   }
 
-  &.section.embedded {
-    color: darken(@color-sugo, 10%);
+  &.section {
+    color: @syntax-punctuation-section-color;
+    &.embedded {
+      color: darken(@color-sugo, 10%);
+    }
+  }
+  &.definition.function.begin,
+  &.definition.function.end {
+    color: @syntax-punctuation-section-color;
   }
 
+  &.terminator {
+    color: @syntax-punctuation-terminator-color
+  }
 }
 
 .support {
@@ -221,7 +255,7 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.name.section {
-    color: @color-sky;
+    color: @color-wintergreen;
   }
 
   &.name.tag {
@@ -233,7 +267,7 @@ atom-text-editor .search-results .marker.current-result .region,
     color: @color-tangerine;
 
     &.id {
-      color: @color-sky;
+      color: @color-wintergreen;
     }
   }
 }
@@ -248,7 +282,7 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.require {
-    color: @color-sky;
+    color: @color-wintergreen;
   }
 
   &.selector {
@@ -267,7 +301,7 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .markup {
   &.bold {
-    color: @color-tangerine;
+    color: @syntax-bold-color;
     font-weight: bold;
   }
 
@@ -280,12 +314,12 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.italic {
-    color: @color-plum;
+    color: @syntax-italic-color;
     font-style: italic;
   }
 
   &.heading .punctuation.definition.heading {
-    color: @color-sky;
+    color: @syntax-header-color;
   }
 
   &.inserted {
@@ -308,7 +342,8 @@ atom-text-editor .search-results .marker.current-result .region,
 .source.gfm .markup {
   -webkit-font-smoothing: auto;
   &.heading {
-    color: @color-wasabi;
+    color: @syntax-header-color;
+    font-weight: bold;
   }
 }
 

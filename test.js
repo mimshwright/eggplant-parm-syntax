@@ -1,3 +1,5 @@
+import {thing} from 'abc'
+
 class foo {
   constructor () {
     var a = "string";
@@ -18,6 +20,12 @@ class foo {
     return this;
   }
 }
+
+function square (a = 1) {
+  return a * a
+}
+
+const cube = (a = 1) => a * a * a
 
 window.bar = "string";
 

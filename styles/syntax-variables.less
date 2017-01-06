@@ -30,18 +30,26 @@
 @syntax-comment-background-color: @syntax-gutter-background-color;
 
 // For git diff info. i.e. in the gutter
-@syntax-color-renamed: @color-sky;
+@syntax-color-renamed: @color-wintergreen;
 @syntax-color-added: @color-wasabi;
 @syntax-color-modified: @color-tangerine;
 @syntax-color-removed: @color-sugo;
 
+// Text
+@syntax-italic-color: @color-mustard;
+@syntax-bold-color: @color-tangerine;
+@syntax-header-color: @color-wasabi;
+@syntax-link-color: @color-wintergreen;
+@syntax-link-url-color: @color-mustard;
+
 // keyword
 @syntax-keyword-color: @color-sugo;
-@syntax-storage-color: @syntax-keyword-color;
+@syntax-storage-color: @color-sugo; // eg. var, const
 
 // variables
 @syntax-var-color: @color-olive-oil;
 @syntax-class-color: @color-bubble-gum;
+@syntax-parameter-color: @syntax-var-color;
 
 // functions
 @syntax-function-color: @color-wintergreen;
@@ -55,3 +63,7 @@
 @syntax-constant-string-color: @color-hard-boiled-egg-yolk;
 @syntax-constant-string-background-color: @syntax-background-color; // lighten(@syntax-background-color, 10%);
 @syntax-constant-string-escape-character-color: @syntax-constant-color;
+
+// Other punctuation
+@syntax-punctuation-section-color: @color-wasabi; // e.g. curly braces
+@syntax-punctuation-terminator-color: @color-wasabi; // e.g. semicolon
