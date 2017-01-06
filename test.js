@@ -16,7 +16,7 @@ class foo {
     var h = "#ffffff"
   }
 
-  abc: function () {
+  abc () {
     return this;
   }
 }

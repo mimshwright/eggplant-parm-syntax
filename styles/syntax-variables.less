@@ -28,7 +28,7 @@
 @syntax-text-color: @color-scrambled-eggs;
 @syntax-cursor-color: @color-sugo;
 @syntax-selection-color: @color-plum;
-@syntax-selection-border-color: @color-scrambled-eggs;
+@syntax-selection-border-color: @color-parmesan;
 @syntax-background-color: @color-eggplant;
 
 // Guide colors
@@ -51,10 +51,14 @@
 @syntax-comment-background-color: @syntax-gutter-background-color;
 
 // For git diff info. i.e. in the gutter
-@syntax-git-renamed-color: @color-wintergreen;
-@syntax-git-added-color: @color-wasabi;
-@syntax-git-modified-color: @color-tangerine;
-@syntax-git-removed-color: @color-sugo;
+@syntax-color-added: @color-wasabi;
+@syntax-color-modified: @color-tangerine;
+@syntax-color-removed: @color-sugo;
+@syntax-color-renamed: @color-wintergreen;
+@syntax-git-added-color: @syntax-color-added;
+@syntax-git-renamed-color: @syntax-color-renamed;
+@syntax-git-modified-color: @syntax-color-modified;
+@syntax-git-removed-color: @syntax-color-removed;
 
 // Text
 @syntax-italic-color: @color-mustard;
