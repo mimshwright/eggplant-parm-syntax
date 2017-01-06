@@ -1,4 +1,4 @@
-@import "colors";
+@import "syntax-variables";
 
 atom-text-editor, :host {
   background-color: @syntax-background-color;
@@ -64,11 +64,25 @@ atom-text-editor .search-results .marker.current-result .region,
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
+.git {
+  &.line-modified {
+    border-color: @syntax-git-modified-color
+  }
+  &.line-added {
+    border-color: @syntax-git-added-color;
+  }
+  &.line-renamed {
+    border-color: @syntax-git-renamed-color;
+  }
+  &.line-removed::before {
+    border-color: @syntax-git-removed-color;
+  }
+}
+
 .comment {
   color: @syntax-comment-text-color;
   background: @syntax-comment-background-color;
 }
-
 .keyword {
   color: @syntax-keyword-color;
 
@@ -140,7 +154,7 @@ atom-text-editor .search-results .marker.current-result .region,
 .string {
   color: @syntax-constant-string-color;
   background: @syntax-constant-string-background-color;
-  font-style: italic;
+  // font-style: italic;
 
   &.regexp {
     color: @syntax-constant-numeric-color;
@@ -286,11 +300,14 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.selector {
-    color: @color-plum;
+    color: @syntax-selection-color;
   }
 
   &.separator {
     color: @syntax-text-color;
+  }
+  &.brace {
+    color: @syntax-punctuation-section-color;
   }
 }
 
@@ -305,7 +322,7 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.changed {
-    color: @color-plum;
+    color: @color-lavender;
   }
 
   &.deleted {
@@ -322,8 +339,8 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.inserted {
-    color: @color-wasabi;
   }
+    color: @color-wasabi;
 
   &.list {
     color: @color-sugo;
