@@ -5,3 +5,5 @@ A delicious, aubergine color theme for Atom by Mims H. Wright. A port and update
 Get the matching UI theme here: [eggplant-parm-ui](http://github.com/mimshwright/eggplant-parm-ui)
 
 ![Screenshot](./screenshot.png)
+
+# 🍆🍆🍆🍆🍆🍆🍆🍆🍆🍆
