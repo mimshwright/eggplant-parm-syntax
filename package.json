@@ -1,7 +1,7 @@
 {
   "name": "eggplant-parm-syntax",
   "theme": "syntax",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A delicious, aubergine color theme for Atom by Mims H. Wright.",
   "keywords": [
     "syntax",
